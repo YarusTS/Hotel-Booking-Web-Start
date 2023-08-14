@@ -1,0 +1,1010 @@
+$color-white: #ffffff
+$color-ghost-white: #F5FAFE
+$color-Black: #333333
+$color-black-black: #000000
+$color-maastricht-blue: #0A223D
+$color-red-crayola: #EC1F46
+$color-harlequin-greeny: #43dd14
+$color-charm: #d16e80
+$color-gray: #BDBDBD
+$color-old-silver: #828282
+$burger-width: 16px
+$burger-height: 11px
+$burger-line-height: 1px
+$font-luckiest-guy: 'Luckiest Guy', cursive
+$font-mulish: 'Mulish', sans-serif
+$font-nunito: 'Nunito', sans-serif
+$wiper-navigation-size: 44px
+$swiper-navigation-top-offset: 44px
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+*::before, *::after
+  box-sizing: inherit
+
+a
+  color: inherit
+  text-decoration: none
+
+.swiper-scrollbar, .header-bottom, .header-top__search, .header-top__account, .offer-right, .header-bottom, .tablet
+  display: none
+  visibility: hidden
+  // position: absolute
+  // overflow: hidden
+  // clip: rect(1px 1px 1px 1px)
+  // clip: rect(1px, 1px, 1px, 1px)
+  // padding: 0
+  // width: 0px
+  // height: 0px
+  // border: 0
+.Mobile
+  display: vlock
+  visibility: visible
+
+li
+  list-style-type: none
+
+img
+  max-width: 100%
+
+h1, h2, h3, h4, h5, h6
+  font-size: inherit
+  font-weight: inherit
+
+body
+  margin: 0 auto
+  font-family: "Mulish", sans-serif
+  color: $color-Black
+  background-color: $color-white
+
+.site-container
+  position: relative
+  overflow: hidden
+
+.wrapper
+  margin: 0 auto
+  width: 100%
+
+.wrapper-fon-blue
+  background: $color-maastricht-blue
+
+.wrapper-fon-white
+  background: $color-white
+
+.wrapper-fon-light-blue
+  background: $color-ghost-white
+
+.container
+  margin: 0 auto
+  padding: 0 20px
+  max-width: 320px
+
+.header
+  position: relative //___________Для бургера
+  padding-top: 24px
+  padding-bottom: 30px
+
+.header-top
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.header-top__logo
+  font-size: 14px
+  letter-spacing: -0.3px
+
+.logo
+  font-family: $font-luckiest-guy, sans-serif
+  font-weight: 400px
+  color: $color-Black
+
+.logo-tour
+  color: red
+
+.exit__account-img
+  margin-bottom: 9px
+  width: 42px
+  height: 42px
+  background-image: url(../img/Ellipse1.svg)
+  background-repeat: no-repeat
+  background-position: center center
+
+.exit__text
+  font-family: $font-mulish
+  font-size: 14px
+  font-weight: 400
+  color: $color-white
+
+.burger
+  position: relative
+  top: 2px
+  z-index: 105
+  display: block
+  padding: 0
+  width: $burger-width
+  height: $burger-height
+  border: none
+  color: $color-black-black
+  cursor: pointer
+  background-color: transparent
+
+.burger span
+  position: absolute
+  left: 0
+  top: 5px
+  width: 100%
+  height: $burger-line-height
+  background-color: #515758
+
+.burger::after, .burger::before
+  content: ""
+  position: absolute
+  left: 0
+  width: 100%
+  height: $burger-line-height
+  cursor: pointer
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out
+  background-color: #515758
+
+.burger::before
+  top: 0
+
+.burger::after
+  bottom: 0
+
+.burger--active .burger__line
+  opacity: 0
+
+.burger--active::before, .burger--active::after
+  top: 50%
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out
+
+.burger--active::before
+  transform: rotate(45deg)
+
+.burger--active::after
+  transform: rotate(-45deg)
+
+.header__nav
+  position: absolute
+  top: 70px
+  right: 0
+  z-index: 100
+  padding: 15px
+  padding-top: 31px
+  width: 100%
+  height: 498px
+  transition: transform 0.3s ease-in-out
+  transform: translateX(1500%)
+  background-color: $color-maastricht-blue
+
+.header__nav--active
+  transform: none
+
+.nav__list
+  display: block
+
+.stop-scroll
+  overflow: hidden
+
+.exit
+  display: flex
+  align-items: center
+  flex-direction: column
+  flex-wrap: wrap
+  margin-bottom: 29px
+
+.nav__list
+  display: flex
+  align-items: center
+  flex-direction: column
+  margin: 0
+  padding: 0
+  list-style: none
+
+.nav__item
+  font-family: $font-mulish
+  font-size: 12px
+  font-weight: 700
+  color: $color-white
+  text-transform: uppercase
+
+.nav__link
+  transition: border-bottom 0.3s ease-in-out
+
+.nav__link:hover
+  padding: 7px
+  border-bottom: 1px solid white
+
+.nav__item:not(:last-child)
+  padding-bottom: 21px
+
+.header-top__search-burger
+  display: flex
+  justify-content: center
+  margin-bottom: 40px
+
+.search-burger
+  padding: 12px 5px 12px 24px
+  width: 181px
+  border: none
+  border-radius: 6px 0px 0px 6px
+  font-family: $font-mulish
+  font-size: 12px
+  font-size: 12px
+  font-weight: 400
+  color: $color-Black
+  outline: none
+  background: $color-ghost-white
+
+.search-burger-but
+  margin-left: 0px
+  padding: 12px 23px 12px 26px
+  border: none
+  border-radius: 0px 6px 6px 0px
+  font-size: 12px
+  color: $color-white
+  outline: none
+  background: $color-red-crayola
+
+.search-burger-but::before
+  content: ""
+  display: block
+  width: 16px
+  height: 16px
+  background-image: url(../img/search.svg)
+  background-repeat: no-repeat
+  background-position: center center
+
+// ______________________________________________________________
+
+.description__text
+  font-family: $font-mulish
+  font-size: 10px
+  font-weight: 400
+  color: $color-maastricht-blue
+
+.description
+  padding-top: 19px
+  padding-bottom: 13px
+
+.offer
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  justify-content: space-between
+  padding-top: 11px
+  padding-bottom: 20px
+
+.offer__link
+  padding: 3px 9px 6px 10px
+  border-radius: 3px
+  font-family: $font-mulish
+  font-size: 10px
+  font-weight: 600
+  color: $color-white
+  background-color: $color-red-crayola
+
+.offer__rating-mini
+  display: inline-block
+  margin-right: 15px
+  font-size: 0
+
+.offer__rating-mini span
+  font-size: 12px
+  line-height: 1
+  color: lightgrey
+
+.offer__rating-mini > span::before
+  content: '★'
+
+.offer__rating-mini > span.rating-mini
+  color: #e9ce93
+
+.title
+  margin: 0
+  font-family: $font-mulish
+  font-size: 25px
+  font-weight: 700
+  letter-spacing: -0.65px
+
+.offer__title
+  margin-top: 10px
+  color: $color-Black
+
+.offer__text
+  font-family: $font-mulish
+  font-size: 12px
+  font-weight: 400
+  line-height: normal
+  color: $color-Black
+
+.offer-left
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  justify-content: space-between
+
+.exposition
+  padding-top: 19px
+  padding-bottom: 40px
+
+.exposition__fon
+  margin-bottom: 20px
+  width: 278.444px
+  height: 179px
+  border-radius: 8px
+  background-image: url(../img/Slider.jpg)
+  background-repeat: no-repeat
+  background-position: center center
+
+.exposition__fon::before
+  display: block
+  height: 100%
+  border-radius: 8px
+  background: linear-gradient(180deg, rgba(0, 122, 223, 0.48) 0%, rgba(255, 255, 255, 0.13) 100%)
+
+.exposition__descript
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+.descript__price
+  margin-bottom: 20px
+  padding: 30px 21px 5px 23px
+  width: 279px
+  height: 210px
+  border-radius: 8px
+  color: $color-white
+  background: #0A223D
+
+.price__amount
+  display: flex
+  justify-content: flex-start
+  margin-bottom: 18px
+  font-family: $font-nunito
+
+.amount
+  margin-right: 60px
+
+.amount__starts
+  margin-bottom: 5px
+  font-size: 10px
+  font-weight: 400
+
+.amount__dollars
+  font-family: $font-nunito
+  font-size: 24px
+  font-weight: 800
+
+.amount__time
+  margin-bottom: 9px
+
+.amount__time, .quantity__for-guests, .quantity__rooms
+  font-size: 12px
+  font-weight: 400
+
+.amount__booking
+  font-size: 17px
+
+.amount__booking, .quantity__telephone
+  font-family: $font-nunito
+  font-weight: 600
+  font-style: normal
+  line-height: normal
+
+.descript__map
+  width: 280px
+  height: 173px
+  border-radius: 10px
+  background: url(../img/map.jpg), lightgray 50% / cover no-repeat
+
+.descript__map::after
+  content: ""
+  display: block
+  height: 100%
+  border-radius: 8px
+
+.dollar
+  color: $color-white
+
+.dollar::before
+  content: "$"
+
+.quantity
+  display: flex
+  align-items: end
+  flex-direction: column
+  padding-top: 5px
+
+.quantity__for-guests
+  position: relative
+  display: flex
+  align-items: center
+  margin-bottom: 10px
+
+.quantity__rooms
+  position: relative
+  display: flex
+  align-items: center
+  margin-bottom: 25px
+
+.quantity__telephone
+  position: relative
+  display: flex
+  align-items: center
+  font-size: 18px
+
+.quantity__for-guests::before
+  content: ""
+  position: absolute
+  left: -25px
+  padding-left: 23px
+  width: 14px
+  height: 14px
+  background-image: url(../img/user.svg)
+  background-repeat: no-repeat
+  background-position: center center
+
+.quantity__rooms::before
+  content: ""
+  position: absolute
+  left: -31px
+  padding-left: 23px
+  width: 14px
+  height: 14px
+  background-image: url(../img/home.svg)
+  background-repeat: no-repeat
+  background-position: center center
+
+.quantity__telephone::before
+  content: ""
+  position: absolute
+  left: -29px
+  padding-left: 23px
+  width: 14px
+  height: 14px
+  background-image: url(../img/phone-call.svg)
+  background-repeat: no-repeat
+  background-position: center center
+
+.place__button
+  padding: 15px 52px 14px 55px
+  border-radius: 4px
+  font-size: 14px
+  background: $color-red-crayola
+
+.content-search
+  position: relative
+  width: 100%
+  height: 320px
+  font-family: $font-mulish
+  color: $color-white
+  background: url(../img/bg-image.jpg), lightgray 50% / cover no-repeat
+  background-repeat: no-repeat
+  background-position: center center
+
+.content-search__img
+  position: absolute
+  left: 0
+  right: 0
+  margin-right: auto
+  margin-left: auto
+  padding-top: 78px
+  text-align: left
+  display: flex
+  flex-direction: column
+
+.content-search::after
+  content: ""
+  display: block
+  height: 100%
+  background: rgba(10, 34, 61, 0.80)
+
+.content-search__descript
+  margin-bottom: 8px
+  font-size: 20px
+  font-weight: 300
+
+.content-search__title
+  margin-bottom: 31px
+  font-size: 30px
+  font-weight: 600
+  text-transform: uppercase
+
+.form
+  position: relative
+  margin: 0 auto
+  width: 300px
+
+.input
+  padding-left: 10px
+  width: 100%
+  height: 42px
+  border: 2px solid #7BA7AB
+  border-radius: 5px
+  color: #9E9C9C
+  outline: none
+  background: #F9F0DA
+
+.button
+  position: absolute
+  top: 0
+  right: 0px
+  width: 42px
+  height: 42px
+  border: none
+  border-radius: 0 5px 5px 0
+  cursor: pointer
+  background: #7BA7AB
+
+.button::before
+  content: "\f002"
+  font-size: 16px
+  color: #F9F0DA
+
+.search-form
+  padding: 20px 5px 18px 19px
+  width: 217px
+  border: none
+  border-radius: 4px 0px 0px 4px
+  font-size: 14px
+  outline: none
+
+.search-form-but
+  margin-left: -6px
+  padding: 22px 19px 18px 17px
+  border: none
+  border-radius: 0px 4px 4px 0px
+  font-size: 12px
+  color: $color-white
+  outline: none
+  background: $color-red-crayola
+
+.about-us
+  padding-top: 39px
+  padding-bottom: 70px
+
+.about-us__title
+  margin-bottom: 42px
+  font-family: $font-mulish
+  font-size: 18px
+  font-weight: 700
+  line-height: 23px
+  color: $color-Black
+  text-align: center
+  text-transform: uppercase
+
+.swaiper-slider-box
+  padding-top: 45px
+
+.swaiper-slider__about-us
+  position: relative
+  display: flex
+  align-items: center
+  flex-direction: column
+  width: 281px
+  height: 437px
+  border-radius: 8px
+  color: $color-white
+  text-align: center
+  background: $color-white
+
+.about-us__img
+  position: absolute
+  left: -4px
+  right: 0
+  margin-top: -45px
+  margin-right: auto
+  margin-left: auto
+
+.about-us__small-title
+  margin-bottom: 10px
+  padding-top: 56px
+  font-family: $font-mulish
+  font-size: 12px
+  font-weight: 700
+  color: $color-red-crayola
+
+.about-us__date
+  margin-bottom: 3px
+  font-family: $font-mulish
+  font-size: 10px
+  font-weight: 400
+  color: $color-black-black
+
+.about-us-status
+  margin-right: 0px
+  margin-bottom: 30px
+
+.about-us__text
+  width: 219px
+  font-family: $font-mulish
+  font-size: 12px
+  font-weight: 400
+  line-height: 19px
+  color: $color-Black
+  text-align: left
+
+.but-prev, .but-next
+  position: absolute
+  margin-top: -1078px
+  width: 50px
+  height: 0%
+  color: $color-old-silver
+
+.but-prev
+  left: 44px
+
+.but-next
+  right: 47px
+
+.but-prev::after, .but-next::after
+  font-size: 18px
+
+.activities
+  padding-top: 21px
+  padding-bottom: 61px
+
+.activities__title
+  margin-bottom: 36px
+  font-size: 19px
+  color: $color-Black
+  text-transform: uppercase
+
+.activities__section
+  display: flex
+  flex-direction: column
+
+.section__img
+  position: relative
+  width: 281px
+  height: 255px
+  border-radius: 6px
+  background-repeat: no-repeat
+  background-position: center center
+
+.corner-chamarel
+  order: 0
+  z-index: 0
+  margin-bottom: 8px
+  background-image: url(../img/Rectangle21.jpg)
+
+.tamarind-falls
+  order: 1
+  z-index: 0
+  margin-bottom: 20px
+  background-image: url(../img/Rectangle22.jpg)
+
+.gymkhana-club
+  order: 2
+  z-index: 0
+  margin-bottom: 4px
+  background-image: url(../img/Rectangle23.jpg)
+
+.blue-marine
+  order: 3
+  z-index: 0
+  background-image: url(../img/Rectangle24.jpg)
+
+.corner-chamarel::before, .tamarind-falls::before, .gymkhana-club::before, .blue-marine::before
+  content: "" // для создания
+  display: block // чтобы появился
+  height: 100% // его размер
+  border-radius: 6px
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0.00) 0%, #0A223D 100%)
+
+.section__small-title
+  position: absolute
+  left: 26px
+  bottom: 72px
+  width: 120px
+  font-family: $font-mulish
+  font-weight: 700
+  line-height: 20px
+  color: $color-white
+
+.section__but
+  position: absolute
+  left: 26px
+  bottom: 24px
+  padding: 8px 21px 8px 22px
+  border-radius: 4px
+  font-size: 12px
+
+.btn
+  border: none
+  color: $color-white
+  outline: 2px solid transparent
+  background: $color-red-crayola
+  &:hover
+    border: none
+    color: $color-white
+    outline: 2px solid $color-red-crayola
+    background: $color-harlequin-greeny
+  &:active
+    border: none
+    color: $color-white
+    outline: none
+    background: $color-harlequin-greeny
+
+.footer
+  display: flex
+  flex-direction: column
+  padding-top: 63px
+  padding-bottom: 21px
+
+.footer__logo
+  display: block
+  margin-bottom: 39px
+  width: 100px
+  font-size: 40px
+  line-height: 40px
+  color: $color-white
+  letter-spacing: 0px
+
+.footer__social
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  margin-bottom: 31px
+  text-align: left
+
+.social__title
+  margin-bottom: 20px
+  font-family: $font-mulish
+  font-size: 18px
+  font-weight: 700
+  color: $color-white
+  text-transform: uppercase
+
+.social__list
+  display: flex
+  align-items: center
+  justify-content: flex-start
+
+.social__item:not(:last-child)
+  margin-right: 10px
+
+.social__link
+  display: block
+  width: 24px
+  height: 25px
+  border: none
+  border-radius: 50%
+  transition: opacity 0.2s ease-in-out
+  outline: transparent
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+
+  &--fb
+    width: 24px
+    height: 24px
+
+  &--youtube
+    width: 21px
+    height: 21px
+
+  &--insta
+    width: 20px
+    height: 20px
+
+  &:hover
+    opacity: 1
+
+  &--fb path, &--youtube path, &--insta path
+    fill: $color-gray
+
+  &--fb:hover path, &--youtube:hover path, &--insta:hover path
+    fill: $color-red-crayola
+
+  &--fb:active path, &--youtube:active path, &--insta:active path
+    fill: $color-charm
+
+  &:focus
+    outline: 2px solid $color-red-crayola
+
+.footer__INFORMATION, .footer__ADDITIONAL, .footer__CATEGORIES, .footer__Contact
+  display: flex
+  flex-direction: column
+  color: $color-white
+
+.footer__INFORMATION, .footer__ADDITIONAL
+  margin-bottom: 32px
+
+.footer__CATEGORIES
+  margin-bottom: 43px
+
+.title__fut
+  margin-bottom: 15px
+  font-family: $font-mulish
+  font-size: 18px
+  font-weight: 700
+  color: $color-white
+
+.INFORMATION__NAV, .ADDITIONAL__NAV, .CATEGORIES__NAV, .Contact__NAV, .Contact__text
+  display: flex
+  flex-direction: column
+  font-family: $font-mulish
+  font-size: 14px
+  font-weight: 400
+  line-height: 160%
+  color: $color-gray
+
+.Contact__title
+  margin-bottom: 24px
+  text-transform: uppercase
+
+.Contact__item:not(:last-child)
+  margin-bottom: 20px
+
+.Contact__item
+  position: relative
+
+.Contact__text
+  margin-bottom: 19px
+
+.Contact__NAV
+  padding: 0 15px 0 30px
+
+.map::before
+  content: ""
+  position: absolute
+  left: -30px
+  padding-left: 22px
+  width: 19px
+  height: 30px
+  background-image: url(../img/location.svg)
+  background-repeat: no-repeat
+  background-position: center center
+
+.tel::before
+  content: ""
+  position: absolute
+  left: -31px
+  padding-left: 23px
+  width: 14px
+  height: 33px
+  background-image: url(../img/call.svg)
+  background-repeat: no-repeat
+  background-position: center center
+
+.email::before
+  content: ""
+  position: absolute
+  left: -28px
+  padding-left: 17px
+  width: 14px
+  height: 26px
+  background-image: url(../img/email.svg)
+  background-repeat: no-repeat
+  background-position: center center
+
+.message
+  padding-top: 63px
+
+.message__title
+  margin-bottom: 15px
+  text-transform: uppercase
+
+// _____________________ФОРМА_________________________
+.js-form
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  margin-bottom: 30px
+
+.form-group
+  position: relative
+  display: flex
+  flex-direction: column-reverse
+  margin-right: 0px
+  margin-bottom: 15px
+  min-width: 279px
+  font-weight: 400
+  & input
+    padding: 14px 22px
+    width: 100%
+    height: 50px
+    border: none
+    border-radius: 4px
+    font-size: 73%
+    color: $color-gray
+    cursor: pointer
+    transition: background-color 0.2s ease-in-out
+    outline: none
+    background: $color-white
+
+.just-validate-error-label
+  position: absolute
+  left: 11px
+  top: 2px
+  order: -1
+  font-size: 12px
+  transform: translateY(-120%)
+
+.just-validate-success-field.input
+  border: 1px solid red
+
+.is-invalid.input
+  border: 1px solid red
+
+.form-contact
+  margin-top: 13px
+  margin-right: 2px
+  width: 100%
+  max-width: 273px
+
+.contact__title
+  margin-bottom: 4px
+  line-height: 38px
+  letter-spacing: -0.1px
+
+// ___________________________________________________
+
+.form__field
+  margin-bottom: 25px
+  padding: 0 22px
+  width: 100%
+  height: 60px
+  border: none
+  font-family: $font-mulish
+  font-size: 12px
+  font-weight: 400
+  line-height: 32px
+  color: $color-gray
+  background-color: $color-white
+  &--area
+    margin-bottom: 16px
+    padding-top: 10px
+    padding-bottom: 15px
+    height: 123px
+    border-radius: 4px
+    // resize: none
+
+.form-group-button
+  display: flex
+  flex-direction: column
+
+.form-group-text
+  margin-bottom: 16px
+  font-family: $font-mulish
+  font-size: 12px
+  font-weight: 700
+  color: #E0E0E0
+
+.form-group-btn
+  display: block
+  margin-bottom: 0px
+  padding: 19px 65px 17px 65px
+  min-width: 0px
+  border: none
+  border-radius: 4px
+  font-size: 12px
+  color: $color-white
+  color: #ffffff
+  outline: none
+  background: $color-red-crayola
+
+.Commercial-conditions
+  display: flex
+  justify-content: space-between
+  margin-bottom: 11px
+  padding-right: 5px
+
+.Commercial-conditions__item
+  font-family: $font-mulish
+  font-size: 12px
+  font-weight: 400
+  color: $color-white
+
+.cards
+  width: 135px
+  height: 22px
+  background-image: url(../img/image3.jpg)
+  background-repeat: no-repeat
+  background-position: center center
