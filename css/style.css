@@ -1134,4 +1134,227 @@ body {
   background-image: url(../img/image3.jpg);
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+.Commercial-conditions__cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Модальное окно */
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: rgba(0, 143, 223, 0.39);
+  cursor: pointer;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+}
+.modal.is-open .modal__container {
+  transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+  opacity: 1;
+  border-radius: 8px;
+  background: #0A223D;
+}
+.modal::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+.modal__container {
+  position: relative;
+  height: 488px;
+  width: 479px;
+  margin: auto auto;
+  display: none;
+  vertical-align: middle;
+  background-color: white;
+  cursor: default;
+  text-align: left;
+  transition: 0.7s ease-in-out;
+  opacity: 0;
+  transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+}
+.modal-text {
+  padding: 30px 90px 101px 90px;
+  right: 0;
+  top: 0;
+}
+.modal-image {
+  align-items: flex-start;
+  width: 44%;
+  left: 0px;
+  top: 0;
+}
+.modal-right {
+  align-items: flex-end;
+}
+.modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
+}
+.modal__container.modal-open {
+  display: flex;
+  justify-content: space-between;
+}
+
+.message__title1 {
+  text-align: center;
+}
+
+.fade {
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+}
+
+.fade.animate-open {
+  opacity: 1;
+  transition: opacity 0.7s ease-in-out;
+}
+
+.modal-close {
+  position: absolute;
+  right: 18px;
+  top: 17px;
+  border: none;
+  outline: none;
+  background: #0A223D;
+}
+
+.content {
+  min-height: 200vh;
+}
+
+.disable-scroll {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.width {
+  width: 412px;
+}
+
+.js-form1 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.form-group1 {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  margin-right: 0px;
+  margin-bottom: 15px;
+  min-width: 301px;
+  font-weight: 400;
+}
+.form-group1 input {
+  padding: 14px 22px;
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 4px;
+  font-size: 73%;
+  color: #BDBDBD;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  outline: none;
+  background: #ffffff;
+}
+
+.just-validate-error-label1 {
+  position: absolute;
+  left: 11px;
+  top: 2px;
+  order: -1;
+  font-size: 12px;
+  transform: translateY(-120%);
+}
+
+.just-validate-success-field1.input {
+  border: 1px solid red;
+}
+
+.is-invalid.input {
+  border: 1px solid red;
+}
+
+.form-contact1 {
+  margin-top: 13px;
+  margin-right: 2px;
+  width: 100%;
+  max-width: 273px;
+}
+
+.contact__title1 {
+  margin-bottom: 4px;
+  line-height: 38px;
+  letter-spacing: -0.1px;
+}
+
+.form__field1 {
+  margin-bottom: 15px;
+  padding: 6px 18px 0 18px;
+  width: 100%;
+  height: 123px;
+  border: 4px solid transparent;
+  font-family: "Mulish", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 32px;
+  color: #BDBDBD;
+  background-color: #ffffff;
+}
+.form__field1--area1 {
+  margin-bottom: 16px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  height: 123px;
+  border-radius: 4px;
+}
+
+.form-group-button1 {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: baseline;
+}
+
+.form-group-text1 {
+  margin-bottom: 16px;
+  font-family: "Mulish", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #E0E0E0;
+}
+
+.form-group-btn1 {
+  display: block;
+  margin-bottom: 0px;
+  padding: 19px 65px 18px 65px;
+  margin-right: 46px;
+  min-width: 0px;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #ffffff;
+  color: #ffffff;
+  outline: none;
+  background: #EC1F46;
 }/*# sourceMappingURL=style.css.map */

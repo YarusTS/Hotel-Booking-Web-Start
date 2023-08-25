@@ -16,6 +16,7 @@ $font-mulish: 'Mulish', sans-serif
 $font-nunito: 'Nunito', sans-serif
 $wiper-navigation-size: 44px
 $swiper-navigation-top-offset: 44px
+$transition-time: 0.7s ease-in-out
 
 *
   margin: 0
@@ -1010,111 +1011,198 @@ body
   background-position: center center
 
 
+.Commercial-conditions__cards
+  display: flex
+  justify-content: space-between
+
 /* Модальное окно */
-  .modal
-    position: fixed
-    left: 0
-    top: 0
-    right: 0
-    bottom: 0
-    z-index: 1000
-    display: flex
-    visibility: hidden
-    overflow-x: hidden
-    overflow-y: auto
-    opacity: 0
-    cursor: pointer
-    transition: opacity $transition-time, visibility $transition-time
-    text-align: center
-    background-color: $color-black-black
-    &.is-open &__container
-      opacity: 1
-      transform: perspective(600px) translate(0px, 0%) rotateX(0deg)
-    &::before
-      content: ''
-      display: inline-block
-      height: 100%
-      vertical-align: middle
-    &__container
-      position: relative
-      display: none
-      margin: auto auto
-      width: 900px
-      height: 500px
-      opacity: 0
-      color: $color-black-black
-      cursor: default
-      transition: $transition-time
-      transform: perspective(600px) translate(0px, -100%) rotateX(45deg)
-      text-align: left
-      vertical-align: middle
-      background-color: $color-white
-    &-text
-      top: 0
-      right: 0
-      padding: 90px 52px 90px 49px
-    &-image
-      left: 0px
-      top: 0
-      align-items: flex-start
-      width: 44%
-    &-right
-      align-items: flex-en
-    &.is-open
-      visibility: visible
-      opacity: 1
-      transition: opacity $transition-time, visibility $transition-time
-    &__container&-open
-      display: flex
-      justify-content: space-between
-
-  .fade
-    opacity: 0
-    transition: opacity $transition-time
-    &.animate-open
-      opacity: 1
-      transition: opacity $transition-time
-
-  .disable-scroll
+.modal
+  position: fixed
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  z-index: 1000
+  background: rgba(0, 143, 223, 0.39)
+  cursor: pointer
+  overflow-y: auto
+  overflow-x: hidden
+  text-align: center
+  transition: opacity $transition-time, visibility $transition-time
+  opacity: 0
+  visibility: hidden
+  display: flex
+  &.is-open &__container
+    transform: perspective(600px) translate(0px, 0%) rotateX(0deg)
+    opacity: 1
+    border-radius: 8px
+    background: #0A223D
+  &::before
+    content: ''
+    display: inline-block
+    vertical-align: middle
+    height: 100%
+  &__container
     position: relative
-    left: 0
+    height: 488px
+    width: 479px
+    margin: auto auto
+    display: none
+    vertical-align: middle
+    background-color: white
+    cursor: default
+    text-align: left
+    transition: $transition-time
+    opacity: 0
+    transform: perspective(600px) translate(0px, -100%) rotateX(45deg)
+  &-text
+    padding: 30px 90px 101px 90px
+    right: 0
     top: 0
-    overflow: hidden
+  &-image
+    align-items: flex-start
+    width: 44%
+    left: 0px
+    top: 0
+  &-right
+    align-items: flex-end
+  &.is-open
+    opacity: 1
+    visibility: visible
+    transition: opacity $transition-time, visibility $transition-time
+  &__container.modal-open
+    display: flex
+    justify-content: space-between
+
+.message__title1
+  text-align: center
+
+.fade
+  opacity: 0
+  transition: opacity $transition-time
+.fade.animate-open
+  opacity: 1
+  transition: opacity $transition-time
+
+.modal-close
+  position: absolute
+  right: 18px
+  top: 17px
+  border: none
+  outline: none
+  background: #0A223D
+
+.content
+  min-height: 200vh
+
+.disable-scroll
+  position: relative
+  overflow: hidden
+  height: 100vh
+  left: 0
+  top: 0
+  width: 100%
+
+.width
+  width: 412px
+
+// _____________________ФОРМА_________________________
+.js-form1
+  display: flex
+  align-items: center
+  flex-direction: column
+  margin-bottom: 30px
+
+.form-group1
+  position: relative
+  display: flex
+  flex-direction: column-reverse
+  margin-right: 0px
+  margin-bottom: 15px
+  min-width: 301px
+  font-weight: 400
+  & input
+    padding: 14px 22px
     width: 100%
-    height: 100vh
-
-  .modal-close
-    position: absolute
-    top: 16px
-    right: 12px
+    height: 50px
     border: none
+    border-radius: 4px
+    font-size: 73%
+    color: $color-gray
+    cursor: pointer
+    transition: background-color 0.2s ease-in-out
     outline: none
+    background: $color-white
 
-  .modal-title
-    margin-bottom: -17px
-    font-size: 25px
-    font-weight: 600
-    line-height: 33px
-    color: $color-black-black
+.just-validate-error-label1
+  position: absolute
+  left: 11px
+  top: 2px
+  order: -1
+  font-size: 12px
+  transform: translateY(-120%)
 
-  .modal-subtitle
-    margin-bottom: -12px
-    font-size: 17px
-    font-weight: 600
-    line-height: 22px
-    color: $color-black-black
+.just-validate-success-field1.input
+  border: 1px solid red
 
-  .modal-data
-    display: block
-    margin-bottom: 40px
-    font-size: 12px
-    font-weight: 400
-    color: $color-Black
+.is-invalid.input
+  border: 1px solid red
 
-  .modal-descr
-    width: 400px
-    font-size: 16px
-    font-weight: 400
-    line-height: 22px
-    color: $color-black-black
-    letter-spacing: 0.5px
+.form-contact1
+  margin-top: 13px
+  margin-right: 2px
+  width: 100%
+  max-width: 273px
+
+.contact__title1
+  margin-bottom: 4px
+  line-height: 38px
+  letter-spacing: -0.1px
+
+// ___________________________________________________
+
+.form__field1
+  margin-bottom: 15px
+  padding: 6px 18px 0 18px
+  width: 100%
+  height: 123px
+  border: 4px solid transparent
+  font-family: $font-mulish
+  font-size: 12px
+  font-weight: 400
+  line-height: 32px
+  color: $color-gray
+  background-color: $color-white
+  &--area1
+    margin-bottom: 16px
+    padding-top: 10px
+    padding-bottom: 15px
+    height: 123px
+    border-radius: 4px
+    // resize: none
+
+.form-group-button1
+  display: flex
+  flex-direction: row-reverse
+  align-items: baseline
+
+.form-group-text1
+  margin-bottom: 16px
+  font-family: $font-mulish
+  font-size: 12px
+  font-weight: 700
+  color: #E0E0E0
+
+.form-group-btn1
+  display: block
+  margin-bottom: 0px
+  padding: 19px 65px 18px 65px
+  margin-right: 46px
+  min-width: 0px
+  border: none
+  border-radius: 4px
+  font-size: 12px
+  color: $color-white
+  color: #ffffff
+  outline: none
+  background: $color-red-crayola

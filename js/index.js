@@ -84,7 +84,7 @@ function submitform() {
     form.submit();
   }
 };
-// ________________________________________________________________________________
+
 const burger = document.querySelector(".burger");
 const menu = document.querySelector(".header__nav");
 const body = document.body;
@@ -254,3 +254,61 @@ const modal = new Modal({
     console.log('opened');
   },
 });
+
+// console.log('asd')
+
+// ________________________________________________________________________________
+/* ________________________________________JustValidate1__________________________________________ */
+let form1 = document.querySelector('.js-form1');
+let telSelector1 = form1.querySelector('input[type="tel"]');
+let inputMask1 = new Inputmask('+7 (999) 999-99-99');
+inputMask1.mask(telSelector1);
+
+const validation1 = new JustValidate('.js-form1',
+{
+  errorFieldCssClass: 'is-invalid',
+  errorLabelCssClass: 'is-label-invalid',
+  errorLabelStyle: { color: '#d11616', },
+  errorFieldStyle: { border: '1px solid red',},
+},);
+
+validation1
+  .addField('.input-name1', [
+    {
+      rule: 'minLength',
+      value: 2,
+      errorMessage: 'Введено мало символов, от 2-х',
+    },
+    {
+      rule: 'maxLength',
+      value: 10,
+      errorMessage: 'Введено более 10 символов!',
+    },
+    {
+      rule: 'required',
+      value: true,
+      errorMessage: 'Введите имя!',
+    }
+  ])
+  .addField('.input-tel1', [
+    {
+      rule: 'required',
+      value: true,
+      errorMessage: 'Телефон обязателен',
+    },
+    {
+      rule: 'function',
+      validator: function () {
+        const phone1 = telSelector.inputmask.unmaskedvalue();
+        return phone1.length === 10;
+      },
+      errorMessage: 'Введите корректный телефон!',
+    },
+  ]);
+
+function submitform1() {
+  if (validation.isValid) {
+    form1.submit();
+  }
+};
+// ________________________________________________________________________________
